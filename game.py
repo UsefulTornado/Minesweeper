@@ -30,12 +30,10 @@ class GameGrid:
         mines_locations = random.sample(range(0, self.cells_number), self.mines_number)
 
         for loc in mines_locations:
-            print(loc)
             self.set_mine(loc // self.width, loc % self.width)
 
 
     def set_mine(self, row, col):
-        print(row, col)
         self.game_grid[row][col].mine = True
 
         for i in range(row - 1, row + 2):
@@ -212,7 +210,6 @@ class Game:
                 print("Игра под названием {} успешно загружена".format(name))
                 _ = input("Нажмите Enter для начала игры")
                 self.play()
-                print("ok")
         except:
             os.system("cls||clear")
             print(
